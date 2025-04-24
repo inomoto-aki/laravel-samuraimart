@@ -23,7 +23,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderrorsamuraimart-login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror samuraimart-login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="メールアドレス">
 
                     @error('email')
                     <span class="invalid-feedback" role="alert">

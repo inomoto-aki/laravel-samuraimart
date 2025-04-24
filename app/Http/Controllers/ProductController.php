@@ -70,7 +70,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
 
-        return view('products.edit', compaact('product','categories'));
+        return view('products.edit', compact('product','categories'));
     }
 
     /**
