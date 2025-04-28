@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuninate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -15,8 +16,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('products.index',compact('products'));
+        $products = Product::paginate(15);
+        $categories = Category::all();
+        $major_category_names = Category::pluck('major_category_name')->unique();
+
+        return view('products.index',compact('products','categories','major_category_names'));
     }
 
     /**
@@ -57,7 +61,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        $reviews= $product->reviews()->get();
+
+        return view('products.show',compact('product', 'reviews'));
     }
 
     /**

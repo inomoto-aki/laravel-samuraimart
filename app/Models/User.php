@@ -40,4 +40,13 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function favorite_products(){
+        return $this->BelongsToMany(Product::class)->withTimestamps();
+    }
 }
