@@ -22,7 +22,7 @@
                <hr>
            </div>
            @auth
-           <form method="POST" class="m-3 align-items-end">
+           <form method="POST" action="{{routs.store')}}" class="m-3 align-items-end">
                @csrf
                <input type="hidden" name="id" value="{{$product->id}}">
                <input type="hidden" name="name" value="{{$product->name}}">
@@ -57,12 +57,12 @@
                </div>
            </form>
            <form id="favorites-destroy-form" action="{{ route('favorites.destroy', $product->id) }}" method="POST" class="d-none">
-                @csrf
-                 @method('DELETE')
-           </form>
-           <form id="favorites-store-form" action="{{ route('favorites.store', $product->id) }}" method="POST" class="d-none">
-               @csrf
-           </form>
+                    @csrf
+                    @method('DELETE')
+                </form>
+                <form id="favorites-store-form" action="{{ route('favorites.store', $product->id) }}" method="POST" class="d-none">
+                    @csrf
+                </form>
            @endauth
        </div>
 
