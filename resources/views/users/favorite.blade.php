@@ -37,7 +37,7 @@
               <input type="hidden" name="price" value="{{ $favorite_product->price }}">
               <input type="hidden" name="qty" value="1">
               <input type="hidden" name="weight" value="0">
-              <button type="submit" class="btn samuraimart-favorite-add-cart">カートに入れ</button>
+              <button type="submit" class="btn samuraimart-favorite-add-cart">カートに入れる</button>
             </form>
             
           </div>

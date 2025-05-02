@@ -6,6 +6,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WebController::class,'index'])->name('top');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -51,8 +50,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::put('users/mypage/password', 'update_password')->name('mypage.update_password');
     Route::get('users/mypage/favorite', 'favorite')->name('mypage.favorite');
     });
-    Route::controller(CartContoroller::class)->group(function() {
+    Route::controller(CartController::class)->group(function() {
         Route::get('users/carts', 'index')->name('carts.index');
         Route::post('users/carts', 'store')->name('carts.store');
+        Route::delete('users/carts', 'destroy')->name('carts.destroy');
     });
 });
