@@ -62,7 +62,7 @@
                 買い物を続ける
             </a>
         @if ($total > 0)
-        <div class="btn samuraimart-submit-button" date-bs-toggle="modal" data-bs-target="#buy-confirm-modal">購入を確定する</div>
+        <div class="btn samuraimart-submit-button" data-bs-toggle="modal" data-bs-target="#buy-confirm-modal">購入を確定する</div>
         @else
         <div class="btn samuraimart-submit-button disabled" data-bs-toggle="modal" data-bs-target="buy-confirm-modal">購入を確定する</div>
         @endif
@@ -78,7 +78,7 @@
                       </div>
                       <div class="modal-footer">
                            <button type="button" class="btn samuraimart-favorite-button border-dark txt-dark" data-bs-dismiss="modal">閉じる</button>
-                           <button type="submit" class="btn samuraimrt-submit-button">購入</button>
+                           <button type="submit" class="btn samuraimart-submit-button">購入</button>
                     </div>
                </div>
           </div>
