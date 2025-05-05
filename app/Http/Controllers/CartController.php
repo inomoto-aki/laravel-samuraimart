@@ -43,7 +43,11 @@ class CartController extends Controller
         'qty' => $request->qty,
         'price' => $request->price,
         'weight' => $request->weight,
-    ]);
+        'options' => [
+            'image' => $request->image,
+        ]
+    ]
+);
     
     return to_route('products.show', $request->get('id'));
 }
@@ -61,11 +65,11 @@ class CartController extends Controller
         $count = $user_shoppingcarts->count();
 
         $count += 1;
-        Caet::instance(Auth::user()->id) ->store($count);
+        Cart::instance(Auth::user()->id) ->store($count);
 
         DB::table('shoppingcart')->where('instance',Auth::user()->id)->where('number',null)->update(['number' => $count, 'buy_flag' => true]);
 
-        Cart::instance(Autn::user()->id)->destroy();
+        Cart::instance(Auth::user()->id)->destroy();
 
         return to_route('carts.index');
     }
