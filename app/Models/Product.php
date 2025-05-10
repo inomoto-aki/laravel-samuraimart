@@ -10,6 +10,16 @@ class Product extends Model
 {
     use HasFactory, Sortable;
 
+    protected $fillable = [
+        'name',
+        'desciption',
+        'price',
+        'category_id',
+        'image',
+        'recommend_flag',
+        'carriage_flag',
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

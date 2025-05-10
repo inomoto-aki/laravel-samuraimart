@@ -169,3 +169,6 @@ body {
   color: #ffffff;
   background-color: #d94b0e;
  }
+ th, td{
+  background-color: #f8fafc !important;;
+ }
