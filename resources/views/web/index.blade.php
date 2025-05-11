@@ -23,6 +23,7 @@
                         <p class="samuraimart-product-label mt-2">
                             {{ $recommend_product->name }}<br>
                             <label>￥{{ $recommend_product->price }}</label>
+                            <div class="samuraimart-star-rating" data--rate="{{ round($recently_product->reviews->avg('rating') * 2)/2 }}"></div>
                         </p>
                     </div>
                 </div>
@@ -38,7 +39,7 @@
          <div class="col-3">
             <a href="{{ route('products.show', $recently_product) }}">
                 @if($recently_product->image !=="")
-                <img src="{{ asset($recently_product->imge) }}" class="img-thumbnail">
+                <img src="{{ asset($recently_product->image) }}" class="img-thumbnail">
                 @else
                 <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
                 @endif

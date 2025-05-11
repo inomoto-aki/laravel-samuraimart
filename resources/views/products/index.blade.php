@@ -28,7 +28,7 @@
                <div class="col-3">
                    <a href="{{route('products.show', $product)}}">
                       @if($product->image !== "")
-                      <img src="{{ asset($product->imge) }}" class="img-thumbnail">
+                      <img src="{{ asset($product->image) }}" class="img-thumbnail">
                       @else
                       <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
                       @endif
@@ -38,6 +38,7 @@
                            <p class="samuraimart-product-label mt-2">
                                {{$product->name}}<br>
                                <label>￥{{$product->price}}</label>
+                               <div class="samuraimart-star-rating" data-rate="{{ round($product->reviews->avg('rating') *2) / 2}}"></div>
                            </p>
                        </div>
                    </div>

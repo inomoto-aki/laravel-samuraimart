@@ -11,7 +11,7 @@ use Encore\Admin\Show;
 use App\Admin\Extensions\Tools\CsvImport;
 use Goodby\CSV\Import\Standard\Lexer;
 use Goodby\CSV\Import\Standard\Interpreter;
-use Goodby\CSV\mport\Standard\LexerConfig;
+use Goodby\CSV\Import\Standard\LexerConfig;
 use Illuminate\Http\Request;
 
 class ProductController extends AdminController
